@@ -1,0 +1,9 @@
+{
+  "name": "FinanzasClaras",
+  "short_name": "FinanzasClaras",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#eef2f6",
+  "theme_color": "#0f172a",
+  "description": "Calculadoras de presupuesto personal, regla 50/30/20, ahorro e interés simple."
+}

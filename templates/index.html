@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %}Presupuesto · FinanzasClaras{% endblock %}
+
+{% block content %}
+  <section class="card">
+    <span class="pill">Regla 50 / 30 / 20</span>
+    <h1>Calculadora de Presupuesto</h1>
+    <p class="subtitulo">Organiza tus ingresos, controla tus gastos y calcula en cuánto tiempo logras tu meta.</p>
+
+    <form method="POST">
+      <div class="campo">
+        <label for="ingreso">Ingreso mensual (S/)</label>
+        <input type="number" step="0.01" id="ingreso" name="ingreso" placeholder="Ej. 2500" required />
+      </div>
+
+      <div class="campo">
+        <label for="gastos_fijos">Gastos fijos (S/)</label>
+        <input type="number" step="0.01" id="gastos_fijos" name="gastos_fijos" placeholder="Ej. 1000" />
+      </div>
+
+      <div class="campo">
+        <label for="gastos_variables">Gastos variables (S/)</label>
+        <input type="number" step="0.01" id="gastos_variables" name="gastos_variables" placeholder="Ej. 600" />
+      </div>
+
+      <div class="campo">
+        <label for="meta">Meta de ahorro opcional (S/)</label>
+        <input type="number" step="0.01" id="meta" name="meta" placeholder="Ej. 1000" />
+      </div>
+
+      <button type="submit">Calcular presupuesto</button>
+    </form>
+
+    {% if error %}
+      <div class="error">{{ error }}</div>
+    {% endif %}
+
+    {% if resultado %}
+      <div class="resultado">
+        <p><strong>Ingreso mensual:</strong> S/ {{ "%.2f"|format(resultado.ingreso) }}</p>
+        <p><strong>Gastos declarados:</strong> S/ {{ "%.2f"|format(resultado.gastos_totales) }}</p>
+        <p><strong>Saldo disponible:</strong> S/ {{ "%.2f"|format(resultado.saldo_real) }}</p>
+        <hr />
+        <p><strong>Necesidades (50%):</strong> S/ {{ "%.2f"|format(resultado.necesidades) }}</p>
+        <p><strong>Deseos (30%):</strong> S/ {{ "%.2f"|format(resultado.deseos) }}</p>
+        <p><strong>Ahorro sugerido (20%):</strong> S/ {{ "%.2f"|format(resultado.ahorro_sugerido) }}</p>
+        {% if resultado.meses_meta %}
+          <hr />
+          <p><strong>Meta de ahorro (S/ {{ "%.2f"|format(resultado.meta) }}):</strong> aprox. <strong>{{ resultado.meses_meta }} meses</strong>.</p>
+        {% endif %}
+      </div>
+    {% endif %}
+  </section>
+
+  <aside class="card guia">
+    <span class="pill">Guía rápida</span>
+    <h2>¿Cómo usar tu presupuesto?</h2>
+    <p>Divide tu ingreso neto para mantener estabilidad mensual sin dejar de ahorrar.</p>
+    <ul>
+      <li><strong>50% Necesidades:</strong> vivienda, alimentación, servicios y transporte básico.</li>
+      <li><strong>30% Deseos:</strong> salidas, ocio, compras no esenciales y suscripciones.</li>
+      <li><strong>20% Ahorro:</strong> fondo de emergencia, metas o inversiones.</li>
+    </ul>
+  </aside>
+{% endblock %}

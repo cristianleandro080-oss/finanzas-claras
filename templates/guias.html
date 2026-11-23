@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %}Guías de Finanzas Personales · FinanzasClaras{% endblock %}
+
+{% block content %}
+  <section class="card guia">
+    <span class="pill">Educación financiera</span>
+    <h1>Guías prácticas para ordenar tu dinero</h1>
+    <p class="subtitulo">Aprende a distribuir tus ingresos, crear un colchón de seguridad y hacer crecer tu ahorro paso a paso.</p>
+
+    <article class="guia-bloque">
+      <h2>1. Cómo aplicar la regla 50 / 30 / 20 sin complicarte</h2>
+      <p>La regla 50 / 30 / 20 divide tu ingreso mensual neto en tres grandes bloques para evitar que los gastos se coman todo tu sueldo:</p>
+      <ul>
+        <li><strong>50% Necesidades:</strong> alquiler o vivienda, alimentación básica, luz, agua, internet y transporte para trabajar o estudiar.</li>
+        <li><strong>30% Deseos:</strong> salidas, comida fuera de casa, compras no urgentes, entretenimiento y suscripciones.</li>
+        <li><strong>20% Ahorro o pago de deudas:</strong> fondo de emergencia, metas a corto plazo o amortización extra de deudas.</li>
+      </ul>
+      <div class="ejemplo-box">
+        <strong>Ejemplo rápido:</strong> si ganas S/ 2,500 al mes, el marco de referencia sería hasta S/ 1,250 en necesidades, hasta S/ 750 en deseos y S/ 500 para ahorrar.
+      </div>
+      <a href="/" class="btn-enlace">Probar en la Calculadora de Presupuesto →</a>
+    </article>
+
+    <article class="guia-bloque">
+      <h2>2. Cómo armar tu fondo de emergencia desde cero</h2>
+      <p>Un fondo de emergencia es dinero reservado exclusivamente para imprevistos reales (una urgencia médica, pérdida temporal de ingresos o una reparación urgente), evitando endeudarte con tarjetas a tasas altas.</p>
+      <ul>
+        <li><strong>Empieza por un primer escalón:</strong> apunta primero a reunir 1 mes de gastos básicos antes de pensar en metas grandes.</li>
+        <li><strong>Escala a 3 o 6 meses:</strong> según la estabilidad de tu ingreso, busca cubrir entre 3 y 6 meses de gastos esenciales.</li>
+        <li><strong>Manténlo accesible y separado:</strong> guárdalo en una cuenta distinta a la de tus gastos diarios para no gastarlo por impulso.</li>
+      </ul>
+      <a href="/" class="btn-enlace">Calcular en cuánto tiempo armas tu meta →</a>
+    </article>
+
+    <article class="guia-bloque">
+      <h2>3. Ahorrar vs. ahorrar con interés compuesto</h2>
+      <p>Guardar dinero bajo el colchón o en una cuenta sin rendimiento conserva el monto nominal, pero pierde poder adquisitivo con el tiempo. Cuando sumas aportes constantes y generas interés, el dinero trabaja en dos frentes: tu esfuerzo mensual y el rendimiento acumulado.</p>
+      <ul>
+        <li><strong>Ahorro simple:</strong> ideal para metas cercanas (menos de 6 a 12 meses) donde priorizas disponibilidad inmediata.</li>
+        <li><strong>Interés compuesto:</strong> clave en plazos mayores, porque los intereses generados también producen intereses en los periodos siguientes.</li>
+        <li><strong>El factor decisivo:</strong> la constancia del aporte mensual y el tiempo suelen pesar más que intentar adivinar el momento perfecto.</li>
+      </ul>
+      <div class="ejemplo-box">
+        <strong>Consejo práctico:</strong> compara cuánto sale de tu bolsillo (capital + aportes) frente a lo que suma el interés al final del plazo.
+      </div>
+      <a href="/ahorro" class="btn-enlace">Simular crecimiento en Calculadora de Ahorro →</a>
+    </article>
+  </section>
+
+  <aside class="card guia">
+    <span class="pill">Checklist mensual</span>
+    <h2>Hábitos que marcan la diferencia</h2>
+    <p>No necesitas fórmulas complejas; basta con revisar tus números con regularidad:</p>
+    <ul>
+      <li><strong>Revisa tus gastos fijos cada trimestre:</strong> planes de telefonía, suscripciones o servicios que ya no usas drenan tu presupuesto en silencio.</li>
+      <li><strong>Separa el ahorro al inicio del mes:</strong> ahorra apenas cobras, no con lo que "sobre" a fin de mes.</li>
+      <li><strong>Evita financiar deseos con deuda cara:</strong> si no entra en tu margen de deseos del mes, espera y planifícalo.</li>
+    </ul>
+
+    <div class="guia-bloque">
+      <h2>Siguiente paso recomendado</h2>
+      <p>Empieza calculando tu saldo real del mes y luego proyecta a cuánto tiempo llegas a tu meta.</p>
+      <a href="/" class="btn-enlace">Ir a Presupuesto</a>
+      <a href="/ahorro" class="btn-enlace">Ir a Ahorro e Interés</a>
+    </div>
+  </aside>
+{% endblock %}

@@ -1,0 +1,352 @@
+:root {
+  --bg: #eef2f6;
+  --card: #ffffff;
+  --text: #0f172a;
+  --muted: #475569;
+  --primary: #1d4ed8;
+  --primary-hover: #1e40af;
+  --accent-bg: #eff6ff;
+  --accent-border: #bfdbfe;
+  --border: #e2e8f0;
+  --error-bg: #fef2f2;
+  --error-text: #991b1b;
+  --shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  background: linear-gradient(180deg, #e2e8f0 0%, var(--bg) 220px);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+  line-height: 1.55;
+  overflow-x: hidden;
+}
+
+header {
+  background-color: #0f172a;
+  color: #ffffff;
+  padding: 14px 18px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.15);
+}
+
+.header-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.brand {
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.brand span {
+  color: #60a5fa;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: #e2e8f0;
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 8px;
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+nav a:hover {
+  background-color: #1e293b;
+  color: #ffffff;
+}
+
+nav a.activo {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+.container {
+  max-width: 960px;
+  margin: 22px auto;
+  padding: 0 14px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+@media (min-width: 780px) {
+  .container {
+    margin: 28px auto;
+    padding: 0 20px;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 24px;
+    align-items: start;
+  }
+}
+
+.card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+@media (min-width: 780px) {
+  .card {
+    padding: 26px;
+  }
+}
+
+h1 {
+  font-size: 1.38rem;
+  line-height: 1.25;
+  margin: 0 0 6px 0;
+}
+
+@media (min-width: 780px) {
+  h1 {
+    font-size: 1.55rem;
+  }
+}
+
+h2 {
+  font-size: 1.1rem;
+  margin: 14px 0 8px 0;
+}
+
+.subtitulo {
+  color: var(--muted);
+  font-size: 0.92rem;
+  margin: 0 0 18px 0;
+}
+
+.campo {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.92rem;
+  margin-bottom: 6px;
+}
+
+/* 16px evita zoom automático indeseado en iOS Safari */
+input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 1rem;
+  background-color: #ffffff;
+  color: var(--text);
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.16);
+}
+
+button {
+  width: 100%;
+  min-height: 46px;
+  padding: 13px 16px;
+  background-color: var(--primary);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+  background-color: var(--primary-hover);
+}
+
+button:active {
+  transform: scale(0.99);
+}
+
+.resultado {
+  margin-top: 20px;
+  padding: 16px;
+  background-color: var(--accent-bg);
+  border: 1px solid var(--accent-border);
+  border-left: 4px solid var(--primary);
+  border-radius: 10px;
+}
+
+.resultado p {
+  margin: 7px 0;
+  font-size: 0.95rem;
+}
+
+.resultado hr {
+  border: none;
+  border-top: 1px solid var(--accent-border);
+  margin: 12px 0;
+}
+
+.error {
+  margin-top: 14px;
+  padding: 12px 14px;
+  background-color: var(--error-bg);
+  color: var(--error-text);
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+  font-size: 0.92rem;
+}
+
+.guia p,
+.guia li {
+  color: var(--muted);
+  font-size: 0.93rem;
+}
+
+.guia ul {
+  padding-left: 18px;
+  margin: 8px 0 14px 0;
+}
+
+.guia li {
+  margin-bottom: 6px;
+}
+
+.pill {
+  display: inline-block;
+  background: #dbeafe;
+  color: #1e40af;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-bottom: 8px;
+}
+
+footer {
+  max-width: 960px;
+  margin: 14px auto 34px auto;
+  padding: 0 18px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+@media (max-width: 520px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  nav {
+    justify-content: space-between;
+    gap: 6px;
+  }
+
+  nav a {
+    flex: 1;
+    justify-content: center;
+    text-align: center;
+    padding: 8px 6px;
+    font-size: 0.78rem;
+    white-space: nowrap;
+  }
+}
+.guia-bloque {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.guia-bloque:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.ejemplo-box {
+  margin: 10px 0 12px 0;
+  padding: 12px 14px;
+  background-color: var(--accent-bg);
+  border-left: 3px solid var(--primary);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.btn-enlace {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 8px 13px;
+  background-color: var(--accent-bg);
+  color: var(--primary);
+  border: 1px solid var(--accent-border);
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-enlace:hover {
+  background-color: var(--primary);
+  color: #ffffff;
+}
+.footer-links {
+  margin-top: 6px;
+}
+
+.footer-links a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* Espacio limpio para futuros bloques de AdSense sin empujar botones ni formularios */
+.ad-slot {
+  margin: 18px 0;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8fafc;
+  border: 1px dashed #cbd5e1;
+  border-radius: 10px;
+  color: #94a3b8;
+  font-size: 0.78rem;
+  text-align: center;
+  padding: 8px;
+}

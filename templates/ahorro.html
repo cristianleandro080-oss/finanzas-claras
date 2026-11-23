@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block title %}Ahorro e Interés Compuesto · FinanzasClaras{% endblock %}
+
+{% block content %}
+  <section class="card">
+    <span class="pill">Interés compuesto</span>
+    <h1>Calculadora de Ahorro</h1>
+    <p class="subtitulo">Proyecta cuánto crecerá tu dinero ahorrando mes a mes con una tasa de interés.</p>
+
+    <form method="POST">
+      <div class="campo">
+        <label for="capital">Capital inicial (S/)</label>
+        <input type="number" step="0.01" id="capital" name="capital" placeholder="Ej. 500" required />
+      </div>
+
+      <div class="campo">
+        <label for="aporte">Aporte mensual (S/)</label>
+        <input type="number" step="0.01" id="aporte" name="aporte" placeholder="Ej. 200" required />
+      </div>
+
+      <div class="campo">
+        <label for="tasa">Tasa de interés anual (%)</label>
+        <input type="number" step="0.01" id="tasa" name="tasa" placeholder="Ej. 5.5" required />
+      </div>
+
+      <div class="campo">
+        <label for="meses">Plazo en meses</label>
+        <input type="number" id="meses" name="meses" placeholder="Ej. 12" required />
+      </div>
+
+      <button type="submit">Calcular proyección</button>
+    </form>
+
+    {% if error %}
+      <div class="error">{{ error }}</div>
+    {% endif %}
+
+    {% if resultado %}
+      <div class="resultado">
+        <p><strong>Total acumulado ({{ resultado.meses }} meses):</strong> S/ {{ "%.2f"|format(resultado.total) }}</p>
+        <p><strong>Total aportado por ti:</strong> S/ {{ "%.2f"|format(resultado.total_aportado) }}</p>
+        <p><strong>Ganancia por interés:</strong> S/ {{ "%.2f"|format(resultado.ganancia) }} ({{ resultado.pct_ganancia }}% del total)</p>
+
+        {% if resultado.historial %}
+          <hr />
+          <p><strong>Evolución por hitos:</strong></p>
+          <ul>
+            {% for item in resultado.historial %}
+              <li>
+                Mes {{ item.mes }} ({{ item.etiqueta_tiempo }}): <strong>S/ {{ "%.2f"|format(item.saldo) }}</strong>
+                (Interés acumulado: S/ {{ "%.2f"|format(item.interes) }})
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+    {% endif %}
+  </section>
+
+  <aside class="card guia">
+    <span class="pill">Conceptos clave</span>
+    <h2>¿Cómo crece tu ahorro?</h2>
+    <p>La constancia mensual y el tiempo hacen que el interés se sume sobre el saldo acumulado.</p>
+    <ul>
+      <li><strong>Capital inicial:</strong> con cuánto empiezas hoy.</li>
+      <li><strong>Aporte mensual:</strong> cuánto sumas cada mes de forma constante.</li>
+      <li><strong>Plazo:</strong> a mayor tiempo, mayor efecto del interés compuesto.</li>
+    </ul>
+
+    <div class="guia-bloque">
+      <h2>¿Aún no defines cuánto ahorrar al mes?</h2>
+      <p>Revisa primero tu margen mensual en la calculadora de presupuesto.</p>
+      <a href="/" class="btn-enlace">Ir a Calculadora de Presupuesto →</a>
+    </div>
+  </aside>
+{% endblock %}
