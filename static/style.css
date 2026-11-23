@@ -37,11 +37,13 @@ header {
 nav {
   max-width: 1160px;
   margin: 0 auto;
-  padding: 1rem 1.5rem;
+  padding: 0.95rem 1.5rem;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.5rem 1.5rem;
+  justify-content: flex-start;
+  gap: 0.5rem 1.75rem;
+
 }
 
 nav a {
