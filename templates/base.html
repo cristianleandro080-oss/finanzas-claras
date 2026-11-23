@@ -1,40 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#0f172a" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-title" content="FinanzasClaras" />
-  <meta name="description" content="Calculadoras gratuitas de presupuesto 50/30/20, ahorro con interés compuesto y guías prácticas de finanzas personales." />
-  <title>{% block title %}FinanzasClaras{% endblock %}</title>
-  <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}" />
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Finanzas Claras{% endblock %}</title>
+  <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8073727962630376"
+       crossorigin="anonymous"></script>
 </head>
 <body>
   <header>
-    <div class="header-inner">
-      <a href="/" class="brand">Finanzas<span>Claras</span></a>
-      <nav>
-        <a href="/" class="{% if request.path == '/' %}activo{% endif %}">Presupuesto</a>
-        <a href="/ahorro" class="{% if request.path == '/ahorro' %}activo{% endif %}">Ahorro e Interés</a>
-        <a href="/guias" class="{% if request.path == '/guias' %}activo{% endif %}">Guías</a>
-      </nav>
-    </div>
+    <nav>
+      <a href="/">Inicio</a>
+      <a href="/ahorro">Ahorro</a>
+      <a href="/guias">Guías</a>
+      <a href="/privacidad">Privacidad</a>
+    </nav>
   </header>
 
-  <main class="container">
+  <main>
     {% block content %}{% endblock %}
   </main>
 
   <footer>
-    <p>FinanzasClaras · Herramientas educativas de presupuesto y ahorro personal</p>
-    <p class="footer-links">
-      <a href="/">Presupuesto</a> ·
-      <a href="/ahorro">Ahorro e Interés</a> ·
-      <a href="/guias">Guías</a> ·
-      <a href="/privacidad">Privacidad y Aviso Legal</a>
-    </p>
+    <p>Finanzas Claras</p>
   </footer>
 </body>
 </html>
