@@ -1,13 +1,15 @@
 :root {
-  --bg-page: #f1f5f9;
+  --bg-page: #f4f7fb;
   --bg-card: #ffffff;
-  --bg-nav: #0f172a;
+  --bg-nav: #0c1624;
+  --bg-badge: #eef2ff;
   --text-main: #0f172a;
   --text-muted: #475569;
+  --text-badge: #1e40af;
   --accent: #2563eb;
   --accent-hover: #1d4ed8;
   --border: #e2e8f0;
-  --shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
+  --shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
   --radius: 16px;
 }
 
@@ -33,9 +35,9 @@ header {
 }
 
 nav {
-  max-width: 960px;
+  max-width: 980px;
   margin: 0 auto;
-  padding: 1rem 1.5rem;
+  padding: 0.95rem 1.5rem;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -47,7 +49,7 @@ nav a {
   text-decoration: none;
   font-weight: 500;
   font-size: 0.95rem;
-  padding: 0.3rem 0.6rem;
+  padding: 0.3rem 0.65rem;
   border-radius: 8px;
 }
 
@@ -59,12 +61,12 @@ nav a:hover {
 main {
   flex: 1;
   width: 100%;
-  max-width: 780px;
-  margin: 2rem auto;
+  max-width: 760px;
+  margin: 2.25rem auto;
   padding: 0 1.25rem;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.75rem;
 }
 
 .card,
@@ -77,8 +79,21 @@ form {
   padding: 2rem;
 }
 
+.badge,
+span[class*="badge"],
+p[class*="badge"] {
+  display: inline-block;
+  background-color: var(--bg-badge);
+  color: var(--text-badge);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  margin-bottom: 0.7rem;
+}
+
 h1 {
-  font-size: clamp(1.65rem, 3vw, 2.15rem);
+  font-size: clamp(1.7rem, 3vw, 2.25rem);
   font-weight: 800;
   letter-spacing: -0.02em;
   color: var(--text-main);
@@ -86,10 +101,10 @@ h1 {
 }
 
 h2 {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: var(--text-main);
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.65rem;
 }
 
 p {
@@ -111,7 +126,7 @@ label {
   font-weight: 600;
   font-size: 0.92rem;
   color: var(--text-main);
-  margin-top: 1.1rem;
+  margin-top: 1.15rem;
   margin-bottom: 0.4rem;
 }
 
@@ -180,7 +195,7 @@ footer p {
   main {
     margin: 1.25rem auto;
     padding: 0 0.9rem;
-    gap: 1.1rem;
+    gap: 1.15rem;
   }
 
   .card,
