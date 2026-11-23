@@ -2,10 +2,10 @@
   --bg-page: #f1f5f9;
   --bg-card: #ffffff;
   --bg-nav: #0b1320;
-  --bg-badge: #e0ecff;
+  --bg-pill: #e0ecff;
   --text-main: #0f172a;
   --text-muted: #475569;
-  --text-badge: #1d4ed8;
+  --text-pill: #1d4ed8;
   --accent: #2563eb;
   --accent-hover: #1d4ed8;
   --border: #e2e8f0;
@@ -35,14 +35,13 @@ header {
 }
 
 nav {
-  max-width: 1120px;
+  max-width: 1160px;
   margin: 0 auto;
   padding: 1rem 1.5rem;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem 1.5rem;
+  gap: 0.5rem 1.5rem;
 }
 
 nav a {
@@ -50,7 +49,7 @@ nav a {
   text-decoration: none;
   font-weight: 500;
   font-size: 0.95rem;
-  padding: 0.3rem 0.6rem;
+  padding: 0.3rem 0.65rem;
   border-radius: 8px;
 }
 
@@ -62,31 +61,34 @@ nav a:hover {
 main {
   flex: 1;
   width: 100%;
-  max-width: 1120px;
+  max-width: 1160px;
   margin: 2rem auto;
   padding: 0 1.5rem;
   display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.9fr);
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
   gap: 1.75rem;
   align-items: start;
 }
 
 .card,
 section,
+aside,
 form {
   background-color: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   padding: 2rem;
+  min-width: 0;
 }
 
+.pill,
 .badge,
-span[class*="badge"],
-p[class*="badge"] {
+span[class*="pill"],
+span[class*="badge"] {
   display: inline-block;
-  background-color: var(--bg-badge);
-  color: var(--text-badge);
+  background-color: var(--bg-pill);
+  color: var(--text-pill);
   font-size: 0.8rem;
   font-weight: 700;
   padding: 0.25rem 0.75rem;
@@ -95,7 +97,7 @@ p[class*="badge"] {
 }
 
 h1 {
-  font-size: clamp(1.6rem, 2.6vw, 2.05rem);
+  font-size: clamp(1.65rem, 2.5vw, 2.1rem);
   font-weight: 800;
   letter-spacing: -0.02em;
   color: var(--text-main);
@@ -103,26 +105,30 @@ h1 {
 }
 
 h2 {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: var(--text-main);
-  margin-top: 0.5rem;
+  margin-top: 0.25rem;
   margin-bottom: 0.5rem;
 }
 
-p {
+p,
+.subtitulo {
   color: var(--text-muted);
-  margin-bottom: 0.95rem;
+  margin-bottom: 1rem;
 }
 
 ul {
   padding-left: 1.25rem;
   color: var(--text-muted);
-  margin-bottom: 1rem;
 }
 
 li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.55rem;
+}
+
+.campo {
+  margin-top: 1rem;
 }
 
 label {
@@ -130,7 +136,6 @@ label {
   font-weight: 600;
   font-size: 0.92rem;
   color: var(--text-main);
-  margin-top: 1rem;
   margin-bottom: 0.4rem;
 }
 
@@ -140,7 +145,7 @@ input[type="email"],
 select,
 textarea {
   width: 100%;
-  padding: 0.8rem 0.95rem;
+  padding: 0.85rem 1rem;
   font-size: 1rem;
   color: var(--text-main);
   background-color: #ffffff;
@@ -163,8 +168,8 @@ input[type="submit"],
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin-top: 1.35rem;
-  padding: 0.9rem 1.25rem;
+  margin-top: 1.4rem;
+  padding: 0.95rem 1.25rem;
   font-size: 1rem;
   font-weight: 700;
   color: #ffffff;
@@ -205,6 +210,7 @@ footer p {
 
   .card,
   section,
+  aside,
   form {
     padding: 1.4rem;
     border-radius: 14px;
